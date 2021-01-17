@@ -10,3 +10,5 @@ def test(request):
 def go(request):
     return render(request, 'go.html')
 
+def third(request):
+    return HttpResponse('This is third test3')
