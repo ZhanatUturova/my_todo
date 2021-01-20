@@ -30,11 +30,30 @@
     </style>
 </head>
 <body>
-    
+    <form action="{% url 'add-book' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" class="create__input" 
+        name="book_title" placeholder="Название книги">
+        <input type="text" class="create__input" 
+        name="book_subtitle" placeholder="Подзагловок">
+        <input type="text" class="create__input" 
+        name="book_description" placeholder="Описание">
+        <input type="text" class="create__input" 
+        name="book_autor" placeholder="Автор">
+        <input type="text" class="create__input" 
+        name="book_price" placeholder="Цена">
+        <input type="text" class="create__input" 
+        name="book_genre" placeholder="Жанр">
+        <input type="text" class="create__input" 
+        name="book_year" placeholder="Год выпуска">
+        
+        <button class="create__btn">Добавить</button>
+    </form>
+
     {% for book in book_list %}
         <h3>{{ book.title }}</h3>
         <h4>{{ book.autor }}</h4>
-        <h5>{{ book.price }} рублей</h5>
+        <h5>{{ book.price }}</h5>
     {% endfor %}
 
 

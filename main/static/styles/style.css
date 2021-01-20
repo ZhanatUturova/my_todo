@@ -110,7 +110,35 @@ section {
     cursor: pointer;
 }
 
+.book__wrap {
+    padding: 20px;
+}
 
+.book__form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
+}
 
+.book__input {
+    width: 32%;
+    padding: 10px;
+}
 
+.book__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.book__subtitle {
+    color: blue;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.book__price {
+    margin-bottom: 40px;
+    font-size: 16px;
+    color: red;
+}
