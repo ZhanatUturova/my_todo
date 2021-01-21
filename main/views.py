@@ -38,30 +38,12 @@ def books(request):
 def add_book(request):
     form = request.POST
     title = form["book_title"]
-    book_title = Book(title=title)
-    book_title.save()
-
     subtitle = form["book_subtitle"]
-    book_subtitle = Book(subtitle=subtitle)
-    book_subtitle.save()
-
     description = form["book_description"]
-    book_description = Book(description=description)
-    book_description.save()
-
     price = form["book_price"]
-    book_price = Book(price=price)
-    book_price.save()
-
     genre = form["book_genre"]
-    book_genre = Book(genre=genre)
-    book_genre.save()
-
     autor = form["book_autor"]
-    book_autor = Book(autor=autor)
-    book_autor.save()
-
     year = form["book_year"]
-    book_year = Book(year=year)
-    book_year.save()
+    book = Book(title=title, subtitle=subtitle, description=description, price=price, genre=genre, autor=autor, year=year)
+    book.save()
     return redirect(books)

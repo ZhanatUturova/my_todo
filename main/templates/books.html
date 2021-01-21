@@ -6,55 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books</title>
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/books.css' %}">
     <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}">
-    <style>
-        body {
-            padding: 20px;
-            font-family: sans-serif;
-        }
-        h3 {
-            margin-bottom: 20px;
-            font-size: 20px;
 
-        }
-        h4 {
-            color: blue;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        h5 {
-            margin-bottom: 40px;
-            font-size: 16px;
-            color: red;
-        }
-    </style>
 </head>
 <body>
-    <form action="{% url 'add-book' %}" method="POST">
-        {% csrf_token %}
-        <input type="text" class="create__input" 
-        name="book_title" placeholder="Название книги">
-        <input type="text" class="create__input" 
-        name="book_subtitle" placeholder="Подзагловок">
-        <input type="text" class="create__input" 
-        name="book_description" placeholder="Описание">
-        <input type="text" class="create__input" 
-        name="book_autor" placeholder="Автор">
-        <input type="text" class="create__input" 
-        name="book_price" placeholder="Цена">
-        <input type="text" class="create__input" 
-        name="book_genre" placeholder="Жанр">
-        <input type="text" class="create__input" 
-        name="book_year" placeholder="Год выпуска">
-        
-        <button class="create__btn">Добавить</button>
-    </form>
-
-    {% for book in book_list %}
-        <h3>{{ book.title }}</h3>
-        <h4>{{ book.autor }}</h4>
-        <h5>{{ book.price }}</h5>
-    {% endfor %}
+    <section class="book__wrap">
+        <form action="{% url 'add-book' %}" method="POST" class="books__form">
+            {% csrf_token %}
+            <input type="text" class="create__input" 
+            name="book_title" placeholder="Название книги">
+            <input type="text" class="create__input" 
+            name="book_subtitle" placeholder="Подзагловок">
+            <input type="text" class="create__input" 
+            name="book_description" placeholder="Описание">
+            <input type="text" class="create__input" 
+            name="book_autor" placeholder="Автор">
+            <input type="text" class="create__input" 
+            name="book_price" placeholder="Цена">
+            <input type="text" class="create__input" 
+            name="book_genre" placeholder="Жанр">
+            <input type="text" class="create__input" 
+            name="book_year" placeholder="Год выпуска">
+            
+            <button class="create__btn">Добавить</button>
+        </form>
+    
+        {% for book in book_list %}
+            <h3 class="my__title">{{ book.title }}</h3>
+            <h4 class="my__subtitle">{{ book.autor }}</h4>
+            <h5 class="my__price">{{ book.price }}</h5>
+        {% endfor %}
+    </section>
 
 
 </body>
