@@ -1,4 +1,8 @@
-
+.book_box {
+    background-color: purple;
+    border: 1 px solid pink;
+    border-radius: 3px;
+}
 .book__form {
     padding: 20px;
     margin-top: 50px;

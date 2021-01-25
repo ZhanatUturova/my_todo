@@ -58,3 +58,23 @@ def add_book(request):
     book = Book(title=title, subtitle=subtitle, description=description, price=price, genre=genre, autor=autor, year=year)
     book.save()
     return redirect(books)
+
+def delete_book(request, id):
+    book = Book.objects.get(id=id)
+    book.delete()
+    return redirect(books)
+
+def mark_book(request, id):
+    book = Book.objects.get(id=id)
+    book.is_favorite = True
+    book.save()
+    return redirect(books)
+
+def books_detail(request):
+    book_list = Book.objects.all()
+    return render(request, 'books_detail.html', {"book_list": book_list})
+
+def books_detail(request, id):
+    book = Book.objects.get(id=id)
+    book.save()
+    return redirect(books)
