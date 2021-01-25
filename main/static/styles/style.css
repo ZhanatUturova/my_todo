@@ -55,11 +55,14 @@ section {
     margin-bottom: 20px;
 }
 
+.todo__item.marked {
+    background-color: #FFE082;
+    border: 2px solid #FAD66A;
+}
 .todo__item.done {
     background-color: #E0E0E0; 
     color: #757575;
 }
-
 .todo__item.done h4,
 .todo__item.done p,
 .todo__item.done span {
@@ -70,23 +73,21 @@ section {
 .todo__item.done img {
     opacity: 0.5;
 }
-
-.todo__item.marked {
-    background-color: #FFE082;
-    border: 2px solid #FAD66A;
-}
-
 .todo__item_header {
     display: flex;
     align-items: center;
     min-height: 35px;
+    
 }
 
 .todo__item_header h4 {
     font-size: 18px;
     font-family: sans-serif;
-}
 
+}
+.todo__item_header h4 > a {
+    text-decoration: none;
+}
 .todo__item_footer {
     display: flex;
     justify-content: space-between;
