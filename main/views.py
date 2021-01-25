@@ -77,5 +77,5 @@ def mark_book(request, id):
     return redirect(books)
 
 def open_book(request, id):
-    book_details = Book.objects.filter(id=id)
-    return render(request, 'books_detail.html', {"book_list": book_details})
+    book_details = Book.objects.get(id=id)
+    return render(request, 'books_detail.html', {"book_details": book_details})

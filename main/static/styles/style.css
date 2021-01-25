@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #263238;
+    font-family: 'Raleway', sans-serif;
 }
 
 section {
@@ -109,4 +111,110 @@ section {
     height: 25px;
     margin: 0 5px;
     cursor: pointer;
+}
+
+/* Блок с книгами */
+
+.books__form {
+    width: 92%;
+    display: flex;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.input__box {
+    width: 48%;
+
+}
+.book__input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-right: 0;
+    outline: none;
+}
+
+.book__btn {
+    outline: none;
+}
+
+.book__container {
+    width: 92%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.book_item {
+    width: 24%;
+    background:#F8E0F7;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #F6CEF5;
+    padding: 10px 15px;
+    color: #FA5882;
+}
+
+.book_item_footer {
+    float: right;
+}
+
+.book_txt {
+    color: #424242;
+    margin-bottom: 11px;
+    font-size: 18px;
+}
+
+.book_item > .book_title {
+    font-size: 25px;
+    text-align: center;
+}
+
+.book_price {
+    color: red;
+    font-size: 22px;
+}
+
+.book_item > .book_price {
+    font-size: 30px;
+    text-align: right;
+}
+
+.book_details {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #424242;
+}
+
+.book_marked {
+    background-color:#E6F8E0;
+    border: 2px solid #ECF6CE;
+}
+
+.book_ins_container {
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.book_box {
+    padding: 20px 25px;
+    width: 40%;
+}
+
+.book_ins {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.book_ins:last-child {
+    margin-bottom: 0;
+}
+
+.book_description,
+.book_genre {
+    font-weight: normal;
 }

@@ -13,54 +13,56 @@
     <section class="book__wrap">
         <form action="{% url 'add-book' %}" method="POST" class="books__form">
             {% csrf_token %}
-            <input type="text" class="create__input" 
-            name="book_title" placeholder="Название книги">
-            <input type="text" class="create__input" 
-            name="book_subtitle" placeholder="Подзагловок">
-            <input type="text" class="create__input" 
-            name="book_description" placeholder="Описание">
-            <input type="text" class="create__input" 
-            name="book_autor" placeholder="Автор">
-            <input type="text" class="create__input" 
-            name="book_price" placeholder="Цена">
-            <input type="text" class="create__input" 
-            name="book_genre" placeholder="Жанр">
-            <input type="text" class="create__input" 
-            name="book_year" placeholder="Год выпуска">
-            
-            <button class="create__btn">Добавить</button>
+            <div class="input__box">
+                <input type="text" class="book__input create__input" 
+                name="book_title" placeholder="Название книги">
+                <input type="text" class="book__input create__input" 
+                name="book_subtitle" placeholder="Подзагловок">
+                <input type="text" class="book__input create__input" 
+                name="book_description" placeholder="Описание">
+                <input type="text" class="book__input create__input" 
+                name="book_autor" placeholder="Автор">
+            </div>
+            <div class="input__box">
+                <input type="text" class="book__input create__input" 
+                name="book_price" placeholder="Цена">
+                <input type="text" class="book__input create__input" 
+                name="book_genre" placeholder="Жанр">
+                <input type="text" class="book__input create__input" 
+                name="book_year" placeholder="Год выпуска">
+                
+                <button class="book__btn create__btn">Добавить</button>
+            </div>
         </form>
-        <div class="todo__container">
+        <div class="book__container">
 
             {% for book in book_list %}
-            <div class="book__item
-                {% if book.is_favorite %}
-                    marked
-                {% endif %}
-            ">
-                <div class="book__item_header">
-                    <h3 class="my__title">{{ book.title }}</h3>
-                    <h4 class="my__subtitle">{{ book.autor }}</h4>
-                    <h5 class="my__price">{{ book.price }}</h5>
-                </div>
-                <div class="book__item_footer">
-                    <p>{{ book.created_at }}</p>
-                    <div class="action__buttons">
-                        {% if book.is_favorite %}
-                            <a href="{% url 'mark-book' book.id %}"><img src="{% static './img/star_yellow.png' %}" alt="Избранное"></a>
-                        {% else %}
-                            <a href="{% url 'mark-book' book.id %}"><img src="{% static './img/star.png' %}" alt="Избранное"></a>
-                        {% endif %}
-                        <a href="{% url 'delete-book' book.id %}"><img src="{% static './img/trash_bin.svg' %}" alt="Удалить"></a>
+            
+                <div class="book_item
+                    {% if book.is_favorite %}
+                        book_marked
+                    {% endif %}
+                ">
+                    <div class="book_item_header">
+                        <h2 class="book_txt book_title">{{ book.title }}</h2>
+                        <h3 class="book_txt book_subtitle">{{ book.autor }}</h3>
+                        <h3 class="book_txt book_price">{{ book.price }}</h3>
                     </div>
+                    <div class="book_item_footer">
+                        <div class="action_buttons">
+                            {% if book.is_favorite %}
+                                <a href="{% url 'mark-book' book.id %}"><img src="{% static './img/star_yellow.png' %}" alt="Избранное"></a>
+                            {% else %}
+                                <a href="{% url 'mark-book' book.id %}"><img src="{% static './img/star.png' %}" alt="Избранное"></a>
+                            {% endif %}
+                            <a href="{% url 'delete-book' book.id %}"><img src="{% static './img/trash_bin.svg' %}" alt="Удалить"></a>
+                        </div>
+                        
+                    </div>
+                    <a href="{% url 'open-book' book.id %}" class="book_details">Подробнее...</a>
                 </div>
-            </div>
             {% endfor %}
-
         </div>
-        
     </section>
-
-
 </body>
 </html>
